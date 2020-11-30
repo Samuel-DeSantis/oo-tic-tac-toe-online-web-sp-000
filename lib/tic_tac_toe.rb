@@ -16,18 +16,6 @@ class TicTacToe
 
   def initialize(board = nil)
     @board = board || Array.new(9, " ")
-
-  end
-
-  def play
-    until over?(@board) do
-      turn(@board)
-    end
-    unless winner(@board) === nil
-      puts "Congratulations #{winner(board)}!"
-    else
-      puts "Cat's Game!"
-    end
   end
 
   def display_board
@@ -43,6 +31,18 @@ class TicTacToe
   end
 
   def move(index, token, value)
+    board[index] = value
+  end
+
+  def play
+    until over?(@board) do
+      turn(@board)
+    end
+    unless winner(@board) === nil
+      puts "Congratulations #{winner(board)}!"
+    else
+      puts "Cat's Game!"
+    end
   end
 
   def current_player(board)
