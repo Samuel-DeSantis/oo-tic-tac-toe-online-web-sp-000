@@ -59,7 +59,7 @@ class TicTacToe
 
   def turn_count(board)
     turn = 0
-    board.each { |item| (item === "X" || item === "O") ? turn += 1 : next}
+    @board.each { |item| (item === "X" || item === "O") ? turn += 1 : next}
     turn
   end
 
