@@ -31,7 +31,7 @@ class TicTacToe
   end
 
   def move(index, token, value)
-    board[index] = value
+    @board[index] = value
   end
 
   def play
