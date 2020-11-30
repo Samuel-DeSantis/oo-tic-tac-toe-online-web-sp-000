@@ -122,5 +122,5 @@ class TicTacToe
     return true unless won?(board) === false
     return false if spaces?(board)
   end
-  
+
 end
