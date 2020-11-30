@@ -45,8 +45,8 @@ class TicTacToe
     end
   end
 
-  def current_player(board)
-    turn_count(board) % 2 === 0 ? "X" : "O"
+  def current_player
+    turn_count % 2 === 0 ? "X" : "O"
   end
 
   def position_taken?(index)
