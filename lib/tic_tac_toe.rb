@@ -49,8 +49,8 @@ class TicTacToe
     turn_count(board) % 2 === 0 ? "X" : "O"
   end
 
-  def position_taken?(board, index)
-    !(board[index].nil? || board[index] == " ")
+  def position_taken?(index)
+    !(@board[index].nil? || @board[index] == " ")
   end
 
   def valid_move?(board, index)
