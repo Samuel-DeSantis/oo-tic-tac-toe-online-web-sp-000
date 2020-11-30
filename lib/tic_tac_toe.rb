@@ -36,7 +36,7 @@ class TicTacToe
 
   def play
     until over?(@board) do
-      turn(@board)
+      turn
     end
     unless winner(@board) === nil
       puts "Congratulations #{winner(board)}!"
