@@ -74,9 +74,9 @@ class TicTacToe
   end
 
   def winner
-    return nil if draw?(board)
+    return nil if draw?(@board)
 
-    unless won?(board) === false
+    unless won?(@board) === false
       winning_combo = won?(board)
       return board[winning_combo[0]]
     end
@@ -84,12 +84,12 @@ class TicTacToe
 
   ## Checks
   def won?(board)
-    false if board_empty?(board) === true
+    false if board_empty?(@board) === true
 
     WIN_COMBINATIONS.each do |win_combination|
-      if (board[win_combination[0]] == "X" && board[win_combination[1]] == "X" && board[win_combination[2]] == "X")
+      if (@board[win_combination[0]] == "X" && @board[win_combination[1]] == "X" && @board[win_combination[2]] == "X")
         return win_combination
-      elsif (board[win_combination[0]] == "O" && board[win_combination[1]] == "O" && board[win_combination[2]] == "O")
+      elsif (@board[win_combination[0]] == "O" && @board[win_combination[1]] == "O" && @board[win_combination[2]] == "O")
         return win_combination
       else
         next
@@ -99,13 +99,13 @@ class TicTacToe
   end
 
   def full?
-    !spaces?(board)
+    !spaces?(@board)
   end
 
   def draw?
     return false if !full?(board) # game in progressas
 
-    case won?(board)
+    case won?(@board)
     when [0, 1, 2] # won in first row
       return false
     when [0, 4, 8] # won in L diagonal
