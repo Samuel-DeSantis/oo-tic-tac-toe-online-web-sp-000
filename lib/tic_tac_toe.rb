@@ -19,11 +19,11 @@ class TicTacToe
 
   end
 
-  def play(board)
-    until over?(board) do
-      turn(board)
+  def play
+    until over?(@board) do
+      turn(@board)
     end
-    unless winner(board) === nil
+    unless winner(@board) === nil
       puts "Congratulations #{winner(board)}!"
     else
       puts "Cat's Game!"
@@ -42,7 +42,7 @@ class TicTacToe
     input.to_i - 1
   end
 
-  def move(index, token = "X")
+  def move(index, token, value)
   end
 
   def current_player(board)
